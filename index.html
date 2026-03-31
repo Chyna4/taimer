@@ -9,17 +9,38 @@
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="craving-medium">
   <main class="screen">
+    <div class="emoji-field" id="emojiField" aria-hidden="true"></div>
     <div class="glow glow-left"></div>
     <div class="glow glow-right"></div>
     <div class="grid"></div>
+
+    <aside class="craving-rail">
+      <span class="craving-percent" id="cravingPercent">40%</span>
+      <div class="slider-wrap">
+        <input class="craving-slider" id="cravingSlider" type="range" min="0" max="100" value="40" step="1" aria-label="Насколько хочется курить">
+      </div>
+      <p class="craving-text" id="cravingText">хочу курить</p>
+    </aside>
 
     <section class="timer-stage" aria-live="polite">
       <div class="orbital orbital-one"></div>
       <div class="orbital orbital-two"></div>
       <p class="timer-label">осталось времени на перекур:</p>
       <div class="timer-value" id="timerValue">00:00:00</div>
+    </section>
+
+    <section class="smoke-counter">
+      <button class="counter-button" id="minusButton" type="button" aria-label="Уменьшить счётчик">−</button>
+      <div class="counter-readout">
+        <p class="counter-label">Сколько буду курить:</p>
+        <div class="counter-value">
+          <span id="smokeCount">00</span>
+          <span class="cigarette">🚬</span>
+        </div>
+      </div>
+      <button class="counter-button" id="plusButton" type="button" aria-label="Увеличить счётчик">+</button>
     </section>
   </main>
 
